@@ -25,6 +25,8 @@ f = Food()
 def collision(someRect, objRect):
     return(pygame.Rect(someRect.x, someRect.y, someRect.width, someRect.width).colliderect(objRect))
 
+f.randomize(WIDTH, HEIGHT)
+
 #MAIN CYCLE
 main_cycle = True
 while main_cycle:
@@ -95,5 +97,6 @@ while main_cycle:
     screen.fill(bg_color)
     time.sleep(1/game_fps)
 
+print("Your final score: ", s.children - 10)
 pygame.display.quit()
 pygame.quit()
