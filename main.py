@@ -80,6 +80,11 @@ while main_cycle:
     if collision(f_rect, s_rect):
         f.randomize(WIDTH, HEIGHT)
         s.children += 1
+        if s.children > 40:
+            s.children += 3
+        elif s.children > 15:
+            s.children += 2
+        
 
     #GAMEOVER
     if s.x < 0 or s.x > WIDTH or s.y < 0 or s.y > HEIGHT:
