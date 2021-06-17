@@ -20,12 +20,11 @@ game_fps = 20
 rect_width = 10
 s_direction = "r"
 s2_direction = "r"
-menuList = ['1 Player', '2 Players', 'Settings', 'Quit Game']
+menuList = ['1 Player', '2 Players', 'Quit Game']
 
 snake_color1 = 0, 255, 0
 snake_color2 = 0, 0, 255
 #CLASSES
-
 f = Food()
 
 #FUNCTIONS
@@ -37,9 +36,7 @@ def text(text, x, y, color, size):
     textsurface = myfont.render(str(text), False, color)
     screen.blit(textsurface, (x, y))
 
-f.randomize(WIDTH, HEIGHT)
-# int(input("1 or 2 players ?: "))
-    
+f.randomize(WIDTH, HEIGHT)    
 
 #MAIN CYCLE
 main_cycle = True
@@ -197,7 +194,17 @@ while main_cycle:
             rect_count = s2.children_list.count(each)
             if rect_count != 1:
                 menu = True
-            
+            if s.position() == each:
+                print("true")
+            print(each)
+    if player_count == 2:
+        if s.position() in s2.children_list:
+            print("Player 2 won.")
+            menu = True
+        if s2.position() in s.children_list:
+            print("Player 1 won.")
+            menu = True
+    
     #UPDATES
     pygame.display.update()
     screen.fill(bg_color)

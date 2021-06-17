@@ -20,3 +20,5 @@ class Snake(object):
         
     def draw(self, screen, posx, posy):
         pygame.draw.rect(screen, self.color, pygame.Rect(posx, posy, self.width, self.width))
+
+    
