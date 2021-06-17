@@ -2,7 +2,6 @@ import time
 import pygame
 from snake import Snake
 from food import Food
-# LOCAL TEST 
 #PYGAME INIT
 pygame.init()
 pygame.font.init()
@@ -60,6 +59,7 @@ while main_cycle:
                 #game_over = True
                 game_over = True
                 menu = False
+                screen.fill(color_background)
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP and item > 0:
                     item -= 1
