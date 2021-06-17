@@ -79,7 +79,6 @@ while main_cycle:
                         player_count = 2
                         menu = False
                     if item == menuList.index('Quit Game'):
-                        print('quit')
                         main_cycle = False
                         menu = False
                         break
@@ -194,8 +193,7 @@ while main_cycle:
             if rect_count != 1:
                 menu = True
             if s.position() == each:
-                print("true")
-            print(each)
+                print(each)
     if player_count == 2:
         if s.position() in s2.children_list:
             print("Player 2 won.")
